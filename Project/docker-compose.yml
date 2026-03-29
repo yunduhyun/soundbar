@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  sound-app:
+    build: .
+    ports:
+      - '8888:8888'
+    volumes:
+      - ./accounts.db:/app/accounts.db
+      - ./static/uploads:/app/static/uploads
+    restart: always
