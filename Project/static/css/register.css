@@ -1,0 +1,159 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  transition: background-color 0.2s ease;
+  overflow-x: hidden;
+}
+
+.login-warpper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.background-image {
+  background-image: url('../images/register.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  width: 90%;
+  max-width: 800px;
+  aspect-ratio: 4/3;
+
+  position: relative;
+}
+
+.input-id,
+.input-pw,
+.input-nickname {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 30px;
+  transform: rotate(-1.5deg);
+  cursor: pointer;
+  padding: 10px;
+  font-size: 25px;
+}
+
+.input-id {
+  top: 33%;
+  left: 45%;
+}
+
+.input-pw {
+  top: 47%;
+  left: 46%;
+}
+
+.input-nickname {
+  top: 60%;
+  left: 48%;
+}
+
+.btn-register {
+  position: absolute;
+  padding: 45px 100px;
+  top: 77%;
+  left: 17%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-login {
+  position: absolute;
+  padding: 40px 75px;
+  top: 77%;
+  left: 48%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.shaking-bg {
+  animation: shake-bg 0.05s linear infinite;
+}
+
+@keyframes shake-bg {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-0.5deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(0.5deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-0.5deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-0.5deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-0.5deg);
+  }
+}
+
+.shaking-input {
+  animation: shake-input 0.1s linear infinite;
+}
+
+@keyframes shake-input {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.bouncing-input {
+  animation: bounce-up-down 0.2s ease-out;
+}
+
+@keyframes bounce-up-down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+    color: #e74c3c;
+  }
+  70% {
+    transform: translateY(5px);
+    color: #0000ff;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

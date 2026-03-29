@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>소리 보관소</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/archive.css') }}"
+    />
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </head>
+  <body>
+    <h1>소리 보관🔈</h1>
+
+    <div class="archive-container">
+      {% for sound in sounds%}
+      <!-- app.py에서 사운드 반환 -->
+      <div class="sound-card" id="card-{{ loop.index }}">
+        <div class="info-row">
+          <span class="nickname">{{ sound.nickname }}님의 사운드!! ➡️ </span>
+          <span class="date-time">{{ sound.date }} | {{sound.time}}</span>
+
+          {% if session.get('username') == 'admin' %}
+          <button
+            class="delete-btn"
+            onclick="deleteSound('{{ sound.filename }}', 'card-{{ loop.index }}')"
+          >
+            ❌
+          </button>
+          {% endif %}
+        </div>
+
+        <audio
+          controls
+          src="{{ url_for('static', filename='uploads/' + sound.filename) }}"
+        >
+          브라우저가 오디오를 지원하지 않습니다 ㅠ
+        </audio>
+      </div>
+      {% else %}
+      <div
+        class="sound-card"
+        style="
+          text-align: center;
+          font-size: 30px;
+          border-color: #999;
+          box-shadow: none;
+        "
+      >
+        아무도 소리 조절을 하지 않았군뇨... <br />적막하네요..😭
+      </div>
+      {% endfor %}
+    </div>
+
+    <button class="home-btn" onclick="location.href = '/index'">
+      돌아가기
+    </button>
+  </body>
+</html>

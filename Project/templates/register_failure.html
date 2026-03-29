@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 실패 !</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/register_failure.css') }}"
+    />
+  </head>
+  <body>
+    <div class="register_failure-warpper">
+      <div class="background-image">
+        <form action="/login">
+          <button type="submit" class="return-btn"></button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

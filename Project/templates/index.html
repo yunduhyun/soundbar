@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>볼륨 조절</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/index.css') }}"
+    />
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="username">
+        <h2>🔈 안녕하세요 {{ session['nickname'] }}님 🔈</h2>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/login">로그인 페이지</a></li>
+        <li><a href="/archive">비밀의 방</a></li>
+        <li><a href="/ranking">랭킹</a></li>
+        <li><a href="/logout">로그아웃</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <div class="beaker-container">
+        <div class="beaker">
+          <div id="liquid" class="liquid"></div>
+          <div class="marks-100 marks">--- 100% !!!---</div>
+          <br />
+          <div class="marks-50 marks">--- 50% !?! ---</div>
+          <br />
+          <div class="marks-20 marks">--- 20% ?? ---</div>
+        </div>
+
+        <div class="beaker-info">
+          <div id="dB-value" class="dB-text">0dB</div>
+          <div class="slider-container">
+            <span>MIN</span>
+            <input
+              type="range"
+              id="volume-slider"
+              min="0"
+              max="100"
+              value="0"
+            />
+            <span>MAX</span>
+          </div>
+          <button id="scream-btn">소리 조절 시작 !</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

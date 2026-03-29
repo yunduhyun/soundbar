@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/login_failure.css') }}"
+    />
+    <title>로그인 실패 !!</title>
+  </head>
+  <body>
+    <div class="login_failure-warpper">
+      <div class="background-image">
+        <form action="/login">
+          <button type="submit" class="return-btn"></button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

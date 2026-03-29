@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원 가입 해주세용</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/register.css') }}"
+    />
+    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
+  </head>
+  <body>
+    <div class="login-warpper">
+      <div class="background-image">
+        <form action="/register" method="post">
+          <input
+            type="text"
+            ,
+            class="input-id"
+            ,
+            placeholder="사용할 ID 입력해줘잉"
+            required
+            name="username"
+            title="영어와 숫자만 입력 가능합니다"
+          />
+          <input
+            type="password"
+            ,
+            class="input-pw"
+            ,
+            placeholder="사용할 PW 입력해줘잉"
+            required
+            name="password"
+          />
+          <input
+            type="text"
+            ,
+            class="input-nickname"
+            ,
+            placeholder="사용할 닉네임 입력해줘잉"
+            ,
+            required
+            name="nickname"
+            id="shake-input"
+          />
+          <button type="submit" , class="btn-register"></button>
+          <button
+            type="button"
+            ,
+            class="btn-login"
+            ,
+            onclick="location.href = '/login'"
+          ></button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

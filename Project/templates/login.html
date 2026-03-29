@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login 해주세요!!!</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/login.css') }}"
+    />
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </head>
+  <body>
+    <div class="login-warpper">
+      <div class="background-image">
+        <div class="scream-drop">😱</div>
+        <div class="scream-drop">🤮</div>
+        <div class="scream-drop">💩</div>
+        <div class="scream-drop">😮</div>
+        <div class="scream-drop">😱</div>
+
+        <form action="/login" , method="POST" class="login-form">
+          <input
+            type="text"
+            ,
+            name="username"
+            ,
+            class="input-id"
+            placeholder="ID 입력해줘잉"
+            id="username"
+            title="영어와 숫자만 입력 가능합니다"
+            required
+          />
+          <input
+            type="password"
+            ,
+            name="password"
+            ,
+            class="input-pw"
+            ,
+            placeholder="PW 입력해줘잉"
+            id="password"
+            required
+          />
+          <button type="submit" , class="btn-login"></button>
+          <button
+            type="button"
+            ,
+            class="btn-register"
+            ,
+            onclick="location.href = '/register'"
+          ></button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

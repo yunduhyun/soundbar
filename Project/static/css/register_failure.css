@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.register_failure-warpper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.background-image {
+  background-image: url('../images/register_failure.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  width: 90%;
+  max-width: 800px;
+  aspect-ratio: 4/3;
+
+  position: relative;
+}
+
+.return-btn {
+  position: absolute;
+  padding: 45px 108px;
+
+  top: 61%;
+  left: 33%;
+
+  cursor: pointer;
+
+  border: none;
+  background-color: transparent;
+}

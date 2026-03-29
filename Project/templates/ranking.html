@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dB Ranking</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/ranking.css') }}"
+    />
+  </head>
+  <body>
+    <h1>최고의 dB의 주인공은 ???</h1>
+
+    <div class="podium">
+      {% if top3|length >= 2 %}
+      <div class="rank-card rank-2">
+        <span style="font-size: 30px">🥈 2위 !</span>
+        <span class="nickname">{{ top3[1].nickname }}</span>
+        <span class="decibel">{{ top3[1].decibel }}dB</span>
+        <audio
+          controls
+          src="{{ url_for('static', filename='uploads/' + top3[1].filename) }}"
+        ></audio>
+      </div>
+      {% endif %} {% if top3|length >= 1 %}
+      <div class="rank-card rank-1">
+        <span style="font-size: 50px">🥇 1위 !!</span>
+        <span class="nickname">{{ top3[0].nickname }}</span>
+        <span class="decibel">{{ top3[0].decibel }}dB</span>
+        <audio
+          controls
+          src="{{ url_for('static', filename='uploads/' + top3[0].filename) }}"
+        ></audio>
+      </div>
+      {% else %}
+      <p style="font-size: 40px">아직 아무도 소리 조절을 하지 않았습니다😭</p>
+      {% endif %} {% if top3|length >= 3 %}
+      <div class="rank-card rank-3">
+        <span style="font-size: 30px">🥉 3위</span>
+        <span class="nickname">{{ top3[2].nickname }}</span>
+        <span class="decibel">{{ top3[2].decibel }}dB</span>
+        <audio
+          controls
+          src="{{ url_for('static', filename='uploads/' + top3[2].filename) }}"
+        ></audio>
+      </div>
+      {% endif %}
+    </div>
+    <button class="home-btn" onclick="location.href = '/index'">
+      돌아가기
+    </button>
+  </body>
+</html>
