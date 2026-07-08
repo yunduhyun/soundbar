@@ -4,7 +4,25 @@ import sqlite3
 from datetime import datetime
 
 app = Flask(__name__)
-app.secret_key = os.urandom(32)
+
+
+def load_secret_key():
+  key = os.environ.get('SECRET_KEY')
+  if key:
+    return key
+
+  key_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.secret_key')
+  if os.path.exists(key_path):
+    with open(key_path, 'r') as f:
+      return f.read().strip()
+
+  key = os.urandom(32).hex()
+  with open(key_path, 'w') as f:
+    f.write(key)
+  return key
+
+
+app.secret_key = load_secret_key()
 UPLOAD_FOLDER = 'static/uploads'
 
 #<-------------------------------------------db 처리 ⬇️-------------------------------------------------->
